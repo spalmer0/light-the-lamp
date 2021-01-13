@@ -86,8 +86,7 @@ function App(props) {
             } />
             <Route path="/:team" render={props =>
               
-              <TeamPage {...props} 
-              />
+              <TeamPage team={teamsData.teams.find(team => team.name === props.match.params.team)}/> 
             } />
           </Switch>
           
