@@ -8,3 +8,16 @@
   flex-grow: 1;
 }
 
+.nhlTeam {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-direction:column;
+  border: 1px solid black;
+  width: 100px;
+  margin: 10px;
+}
+
+.nhlTeam a {
+  text-decoration: none;
+}

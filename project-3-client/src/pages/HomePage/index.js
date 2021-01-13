@@ -1,11 +1,18 @@
-// import styles from '';
+import TeamCard from '../../components/TeamCard';
 
-function Home(props) {
+
+function HomePage(props) {
     return (
         <div>
-            Home
+            {
+            props.teamsData.map((team, idx) =>
+                <TeamCard key={idx} team={team} />
+                )
+            }
+            
+
         </div>
     );
 };
 
-export default Home;
+export default HomePage;

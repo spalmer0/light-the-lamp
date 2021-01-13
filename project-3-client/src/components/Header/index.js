@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
+import lamp from '../../images/lamp.png';
 
 function Header(props) {
     return (
         <header className={styles.Header}>
             <Link to="/">
-                <h1>Project 3</h1>
+                <h1>Light the Lamp</h1>
+                <img src={lamp} alt="goal lamp" height={100} width={150} />
             </Link>
             <nav>
                 <ul>
