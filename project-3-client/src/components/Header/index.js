@@ -15,10 +15,10 @@ function Header(props) {
                         props.user ?
                         <>
                             <li>
-                                <Link to="" onClick={props.handleLogout}>Logout</Link>
+                                <Link to="/">Home</Link>
                             </li>
                             <li>
-                                <Link to="/dashboard">Dashboard</Link>
+                                <Link to="" onClick={props.handleLogout}>Logout</Link>
                             </li>
                         </>
                         :
