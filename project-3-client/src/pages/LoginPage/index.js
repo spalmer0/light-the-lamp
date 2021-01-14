@@ -21,7 +21,7 @@ function LoginPage(props) {
             setFormState(getInitialFormState());
             // TODO: comment out to see that user doesn't get added to state without
             props.handleSignupOrLogin();
-            props.history.push('/dashboard');
+            props.history.push('/');
         } catch (error) {
             alert(error.message);
         }
@@ -29,12 +29,14 @@ function LoginPage(props) {
     return (
         <div className="Page">
             <form onSubmit={handleSubmit}>
+                <h1>Sign In</h1>
                 <input 
                 value={formState.email} 
                 onChange={handleChange} 
                 name="email" 
                 type="email" 
                 />
+            
                 <input 
                 value={formState.password} 
                 onChange={handleChange} 

@@ -2,7 +2,6 @@
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
-import DashboardPage from './pages/DashboardPage';
 import SignupPage from './pages/SignupPage';
 import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
 import './App.css';
@@ -18,23 +17,14 @@ function App(props) {
   });
 
   const [teamsData, setTeamsData] = useState({
-    teams: [],
-    teamId: Number,
-    name: String,
-    link: String,
-    venue: Object,
-    firstYearOfPlay: String,
-    conference: Object,
-    officialSiteUrl: String
+    teams: []
   })
-
-  
-  
   async function getAppData() {
     const data = await getTeams();
     setTeamsData(data);
     console.log(data);
   }
+
 
   useEffect(() => {
     getAppData();
@@ -62,13 +52,12 @@ function App(props) {
         <main>
           <Switch>
             <Route exact path="/" render={props =>
-              
               <HomePage teamsData={teamsData.teams}/>
             } />
             
-            <Route exact path="/dashboard" render={props =>
+            <Route exact path="/" render={props =>
               userState.user ?
-              <DashboardPage />
+              <HomePage teamsData={teamsData.teams}/>
                 :
               <Redirect to="/login" />
             } />
@@ -88,6 +77,9 @@ function App(props) {
               
               <TeamPage team={teamsData.teams.find(team => team.name === props.match.params.team)}/> 
             } />
+            {/* <Route path="/:player" render={props =>
+              <PlayerPage player={playersData.roster.find(player => player.person.fullName === props.match.params.player)}/>
+            } /> */}
           </Switch>
           
         </main>

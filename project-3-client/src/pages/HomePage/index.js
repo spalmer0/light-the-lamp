@@ -9,8 +9,6 @@ function HomePage(props) {
                 <TeamCard key={idx} team={team} />
                 )
             }
-            
-
         </div>
     );
 };

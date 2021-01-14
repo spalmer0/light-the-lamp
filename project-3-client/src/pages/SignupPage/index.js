@@ -26,7 +26,7 @@ function SignupPage(props) {
 
             props.handleSignupOrLogin();
 
-            props.history.push('/dashboard');
+            props.history.push('/');
             
         } catch (error) {
             alert(error.message);
@@ -35,24 +35,28 @@ function SignupPage(props) {
     return (
         <div className="Page">
             <form onSubmit={handleSubmit}>
+                <label>First Name</label>
                 <input 
                 value={formState.firstName} 
                 onChange={handleChange} 
                 name="firstName" 
                 type="text" 
                 />
+                <label>Last Name</label>
                 <input 
                 value={formState.lastName} 
                 onChange={handleChange} 
                 name="lastName" 
                 type="text" 
                 />
+                <label>Email</label>
                 <input 
                 value={formState.email} 
                 onChange={handleChange} 
                 name="email" 
                 type="email" 
                 />
+                <label>Password</label>
                 <input 
                 value={formState.password} 
                 onChange={handleChange} 
