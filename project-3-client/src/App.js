@@ -10,6 +10,7 @@ import LoginPage from './pages/LoginPage';
 import { useEffect, useState } from 'react';
 import TeamPage from './pages/TeamPage';
 import { getTeams } from './services/nhl-api';
+import PlayerPage from './pages/PlayerPage';
 
 function App(props) {
   const [ userState, setUserState ] = useState({
@@ -73,13 +74,19 @@ function App(props) {
                 handleSignupOrLogin={handleSignupOrLogin}
               />
             } />
-            <Route path="/:team" render={props =>
+            <Route path="/team/:id" render={props =>
               
-              <TeamPage team={teamsData.teams.find(team => team.name === props.match.params.team)}/> 
+              <TeamPage team={teamsData.teams.find(team => {
+                console.log(props);
+                return team.id === Number(props.match.params.id)
+              })}/> 
             } />
-            {/* <Route path="/:player" render={props =>
-              <PlayerPage player={playersData.roster.find(player => player.person.fullName === props.match.params.player)}/>
-            } /> */}
+            <Route path="/player/:id" render={props => {
+              console.log(props);
+              return <PlayerPage playerId={props.match.params.id}/>
+
+            }
+            } />
           </Switch>
           
         </main>

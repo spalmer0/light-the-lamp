@@ -6,8 +6,9 @@ function TeamCard(props) {
 
   return (
     <div>
-      <Link to={`/${props.team.name}`}>
+      <Link to={`/team/${props.team.id}`}>
         <p>{props.team.name}</p>
+        
         
       </Link>
       
