@@ -1,10 +1,16 @@
-import styles from './Footer.module.css';
+import styled from 'styled-components';
+
+const StyledFooter = styled.footer`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`;
 
 function Footer(props) {
     return (
-        <footer className={styles.Footer}>
+        <StyledFooter>
             <p>Copyright &copy; All Rights Reserved {new Date().getFullYear()} </p>
-        </footer>
+        </StyledFooter>
     );
 };
 

@@ -30,7 +30,7 @@ function TeamPage(props) {
             <p>First Year of Play: {props.team.firstYearOfPlay}</p>
             <p>{props.team.conference.name} Conference</p>
             <p>Division: {props.team.division.name}</p>
-            <a href={props.team.officialSiteUrl} target="_blank">Official Team Site</a>
+            <a href={props.team.officialSiteUrl} target="_blank" rel="noreferrer">Official Team Site</a>
             <h2>Roster:</h2>
             <div>
               {

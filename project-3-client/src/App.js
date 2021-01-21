@@ -11,6 +11,16 @@ import { useEffect, useState } from 'react';
 import TeamPage from './pages/TeamPage';
 import { getTeams } from './services/nhl-api';
 import PlayerPage from './pages/PlayerPage';
+import styled from 'styled-components';
+
+const StyledApp = styled.div`
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  main {
+    flex-grow: 1;
+  }
+`;
 
 function App(props) {
   const [ userState, setUserState ] = useState({
@@ -29,7 +39,6 @@ function App(props) {
 
   useEffect(() => {
     getAppData();
-    console.log('effect');
   }, []);
 
   function handleSignupOrLogin() {
@@ -48,7 +57,7 @@ function App(props) {
 
 
   return (
-    <div className="App">
+    <StyledApp>
       <Header handleLogout={handleLogout} user={userState.user} />
         <main>
           <Switch>
@@ -94,7 +103,7 @@ function App(props) {
         
         
       <Footer />
-    </div>
+    </StyledApp>
   );
 }
 
