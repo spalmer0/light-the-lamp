@@ -75,17 +75,18 @@ function App(props) {
               />
             } />
             <Route path="/team/:id" render={props =>
-              
+              userState.user ?
               <TeamPage team={teamsData.teams.find(team => {
-                console.log(props);
                 return team.id === Number(props.match.params.id)
-              })}/> 
+              })}/>
+              :
+              <Redirect to="/login" /> 
             } />
             <Route path="/player/:id" render={props => {
-              console.log(props);
-              return <PlayerPage playerId={props.match.params.id}/>
+              return userState.user ? <PlayerPage playerId={props.match.params.id}/> : <Redirect to="/login" />
 
             }
+
             } />
           </Switch>
           
