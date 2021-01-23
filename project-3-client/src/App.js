@@ -13,6 +13,8 @@ import TeamPage from './pages/TeamPage';
 import { getTeams } from './services/nhl-api';
 import PlayerPage from './pages/PlayerPage';
 import styled from 'styled-components';
+import ice from './images/ice.jpg';
+// import { fetchTeams, addFavorite } from './services/teamService';
 
 
 const StyledApp = styled.div`
@@ -22,6 +24,10 @@ const StyledApp = styled.div`
   main {
     flex-grow: 1;
     padding: 50px;
+    background-image: url(${ice});
+    background-repeat: no-repeat;
+    background-size: 100%;
+    
   }
 `;
 
@@ -58,6 +64,19 @@ function App(props) {
     props.history.push('/');
   }
 
+  // async function handleFavorite(teamId) {
+  //   try {
+  //     const { data } = await addFavorite(userData.user.uid, teamId);
+  //     setTeamData({
+  //       topThree: getTopThree(data.results), 
+  //       nowPlaying: data 
+  //     });
+
+  //   } catch (error) {
+
+  //   }
+  // }
+
 
   return (
     <StyledApp>
@@ -90,12 +109,14 @@ function App(props) {
               userState.user ?
               <TeamPage team={teamsData.teams.find(team => {
                 return team.id === Number(props.match.params.id)
-              })}/>
+              })}
+              // handleFavorite={handleFavorite}
+              />
               :
               <Redirect to="/login" /> 
             } />
             <Route path="/player/:id" render={props => {
-              return userState.user ? <PlayerPage playerId={props.match.params.id}/> : <Redirect to="/login" />
+              return userState.user ? <PlayerPage {...props} playerId={props.match.params.id}/> : <Redirect to="/login" />
 
             }
 

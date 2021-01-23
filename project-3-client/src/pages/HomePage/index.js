@@ -16,6 +16,7 @@ p {
   border-radius: 9px;
   padding: 10px;
   margin: 10px 15px 0 0;
+  background-color: #fff;
   &:hover {
     text-decoration: none;  
     background-color: #000;

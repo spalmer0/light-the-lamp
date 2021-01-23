@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const StyledPage = styled.main`
     display: flex;
     flex-direction: row;
-    align-items: center;
+    
     
     .teamInfo {
       margin: 10px;
@@ -17,7 +17,12 @@ const StyledPage = styled.main`
       align-content: flex-start;
     }
 
+    .teamInfo a {
+      text-decoration: none;
+    }
+
     .roster {
+      height: 400px;
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
@@ -29,10 +34,15 @@ const StyledPage = styled.main`
     }
 
     .roster p {
-      &:hover {
-      text-decoration: none;  
-      background-color: rgb(108,117,124);
+      margin: 10px;
+      padding: 2px;
+      background-color: white;
+      border-radius: 5px;
+      color: #000;
+      &:hover {  
+      background-color: #000;
       color: #fff;
+      text-decoration: none;
       }
     }
 
@@ -90,7 +100,7 @@ function TeamPage(props) {
               <h2>Roster:</h2>
               {
               rosterData.roster.map((player, idx) =>
-                  <PlayerCard key={idx} player={player} style={{ textDecoration: 'none' }} />
+                  <PlayerCard teamId={props.team.id} key={idx} player={player} style={{ textDecoration: 'none' }} />
                   )
               }
             </div>

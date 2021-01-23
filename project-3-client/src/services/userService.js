@@ -1,5 +1,6 @@
 import { setToken, getUserFromToken, removeToken } from './tokenService';
-const BASE_URL = 'http://localhost:3001/api/users';
+// const BASE_URL = 'http://localhost:3001/api/users'; development url
+const BASE_URL = ' https://light-the-lamp-backend.herokuapp.com/api/users';
 
 
 

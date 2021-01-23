@@ -13,9 +13,6 @@ const StyledPage = styled.main`
       padding: 20px;
     }
 
-    /* .playerTeam h5 {
-      margin-bottom: 50px;
-    } */
 
     .playerSpecs {
       align-items: center;
@@ -41,14 +38,15 @@ function PlayerPage(props) {
         console.log('effect');
       }, []);
     
-    if (playerData) {
+      console.log('player page', props);
+      if (playerData) {
       return (
         <StyledPage>
             <div className="playerTeam">
               <h1>{playerData.fullName}</h1>
               <h5>{playerData.currentTeam.name}</h5>
               <br/>
-              <Link to="/">
+              <Link to={`/team/${props.location.state.teamId}`}>
                 <Button variant="secondary" type="submit">
                   Go Back to {playerData.currentTeam.name} Team Page
                 </Button>
