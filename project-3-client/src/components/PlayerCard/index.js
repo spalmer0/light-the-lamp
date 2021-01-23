@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 
 
+
 function PlayerCard(props) {
   
   const playerObject = {
@@ -11,7 +12,7 @@ function PlayerCard(props) {
   return (
     <div>
 
-      <Link to={playerObject}>
+      <Link to={playerObject} >
         <p>{props.player.person.fullName}</p>
       </Link>
    

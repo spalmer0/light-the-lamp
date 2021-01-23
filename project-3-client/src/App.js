@@ -1,4 +1,5 @@
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
@@ -12,6 +13,7 @@ import TeamPage from './pages/TeamPage';
 import { getTeams } from './services/nhl-api';
 import PlayerPage from './pages/PlayerPage';
 import styled from 'styled-components';
+
 
 const StyledApp = styled.div`
   display: flex;

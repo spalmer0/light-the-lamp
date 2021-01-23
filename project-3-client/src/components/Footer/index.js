@@ -9,7 +9,7 @@ const StyledFooter = styled.footer`
 function Footer(props) {
     return (
         <StyledFooter>
-            <p>Copyright &copy; All Rights Reserved {new Date().getFullYear()} </p>
+            <p>Copyright &copy; {new Date().getFullYear()} Light the Lamp. All Rights Reserved. </p>
         </StyledFooter>
     );
 };

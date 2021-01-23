@@ -46,6 +46,7 @@ function PlayerPage(props) {
         <StyledPage>
           
             <h1>{playerData.fullName}</h1>
+            {/* <h1>{playerData.currentTeam.name}</h1> */}
             <div>
               <p>Jersey Number: {playerData.primaryNumber}</p>
               <p>Position: {playerData.primaryPosition.name}</p>
