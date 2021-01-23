@@ -18,6 +18,7 @@ const StyledHeader = styled.header`
     ul {
         display: flex;
         list-style: none;
+        margin-top: 20px;
     }
     
     li {

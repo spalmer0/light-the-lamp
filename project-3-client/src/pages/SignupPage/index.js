@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { signup } from '../../services/userService';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+
+
 function SignupPage(props) {
     const [formState, setFormState] = useState(getInitialFormState());
     function getInitialFormState() {
@@ -33,39 +37,89 @@ function SignupPage(props) {
         }
     }
     return (
-        <div className="Page">
-            <form onSubmit={handleSubmit}>
-                <label>First Name</label>
-                <input 
-                value={formState.firstName} 
-                onChange={handleChange} 
-                name="firstName" 
-                type="text" 
+        <Form onSubmit={handleSubmit}>
+            <Form.Group controlId="formBasicEmail">
+                <Form.Label>First Name</Form.Label>
+                <Form.Control 
+                    value={formState.firstName}
+                    onChange={handleChange}
+                    name="firstName"
+                    type="text" 
+                    placeholder="Enter First Name"
                 />
-                <label>Last Name</label>
-                <input 
-                value={formState.lastName} 
-                onChange={handleChange} 
-                name="lastName" 
-                type="text" 
+            </Form.Group>
+
+            <Form.Group controlId="formBasicEmail">
+                <Form.Label>Last Name</Form.Label>
+                <Form.Control 
+                    value={formState.lastName}
+                    onChange={handleChange}
+                    name="lastName"
+                    type="text" 
+                    placeholder="Enter Last Name"
                 />
-                <label>Email</label>
-                <input 
-                value={formState.email} 
-                onChange={handleChange} 
-                name="email" 
-                type="email" 
+            </Form.Group>
+
+            <Form.Group controlId="formBasicEmail">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control 
+                    value={formState.email}
+                    onChange={handleChange}
+                    name="email"
+                    type="email" 
+                    placeholder="Enter email"
                 />
-                <label>Password</label>
-                <input 
-                value={formState.password} 
-                onChange={handleChange} 
-                name="password" 
-                type="password" 
+            </Form.Group>
+
+            <Form.Group controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control 
+                    value={formState.password}
+                    onChange={handleChange}
+                    name="password"
+                    type="password"
+                    placeholder="Password"
                 />
-                <button>Sign Up</button>
-            </form>
-        </div>
+            </Form.Group>
+            
+            <Button variant="primary" type="submit">
+                Submit
+            </Button>
+        </Form>
+        
+        // <div className="Page">
+        //     <form onSubmit={handleSubmit}>
+        //         <label>First Name</label>
+        //         <input 
+        //         value={formState.firstName} 
+        //         onChange={handleChange} 
+        //         name="firstName" 
+        //         type="text" 
+        //         />
+        //         <label>Last Name</label>
+        //         <input 
+        //         value={formState.lastName} 
+        //         onChange={handleChange} 
+        //         name="lastName" 
+        //         type="text" 
+        //         />
+        //         <label>Email</label>
+        //         <input 
+        //         value={formState.email} 
+        //         onChange={handleChange} 
+        //         name="email" 
+        //         type="email" 
+        //         />
+        //         <label>Password</label>
+        //         <input 
+        //         value={formState.password} 
+        //         onChange={handleChange} 
+        //         name="password" 
+        //         type="password" 
+        //         />
+        //         <button>Sign Up</button>
+        //     </form>
+        // </div>
     );
 }
 export default SignupPage;

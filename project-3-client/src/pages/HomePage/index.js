@@ -17,7 +17,8 @@ p {
   padding: 10px;
   margin: 10px 15px 0 0;
   &:hover {
-      background-color: #000;
+    text-decoration: none;  
+    background-color: #000;
       color: #fff;
   }
 }

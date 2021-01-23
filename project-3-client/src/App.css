@@ -8,7 +8,7 @@
   flex-grow: 1;
 }
 
-.nhlTeam {
+/* .nhlTeam {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -20,4 +20,4 @@
 
 .nhlTeam a {
   text-decoration: none;
-}
+} */

@@ -21,6 +21,7 @@ const StyledApp = styled.div`
   flex-direction: column;
   main {
     flex-grow: 1;
+    padding: 50px;
   }
 `;
 
