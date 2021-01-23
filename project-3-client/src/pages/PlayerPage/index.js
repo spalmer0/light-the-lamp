@@ -1,26 +1,26 @@
 import { useEffect, useState } from 'react';
 import { getPlayer } from '../../services/nhl-api';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
 
 const StyledPage = styled.main`
     display: flex;
     flex-direction: row;
     align-items: center;
 
-    h1 {
-      
-      
-      margin: 10px;
+    .playerTeam {
+      padding: 20px;
     }
 
-    div {
+    /* .playerTeam h5 {
+      margin-bottom: 50px;
+    } */
+
+    .playerSpecs {
       align-items: center;
       border-left: 1px solid black;
-      margin: 10px;
-    }
-
-    p {
-      margin-left: 10px;
+      padding: 20px;
     }
 
 `;
@@ -44,10 +44,19 @@ function PlayerPage(props) {
     if (playerData) {
       return (
         <StyledPage>
-          
-            <h1>{playerData.fullName}</h1>
-            {/* <h1>{playerData.currentTeam.name}</h1> */}
-            <div>
+            <div className="playerTeam">
+              <h1>{playerData.fullName}</h1>
+              <h5>{playerData.currentTeam.name}</h5>
+              <br/>
+              <Link to="/">
+                <Button variant="secondary" type="submit">
+                  Go Back to {playerData.currentTeam.name} Team Page
+                </Button>
+
+              </Link>
+
+            </div>
+            <div className="playerSpecs">
               <p>Jersey Number: {playerData.primaryNumber}</p>
               <p>Position: {playerData.primaryPosition.name}</p>
               <p>Shoots: {playerData.shootsCatches}</p>  

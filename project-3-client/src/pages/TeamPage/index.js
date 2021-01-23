@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { getRoster} from '../../services/nhl-api';
 import PlayerCard from '../../components/PlayerCard';
 import styled from 'styled-components';
+import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 
 const StyledPage = styled.main`
     display: flex;
@@ -12,10 +14,13 @@ const StyledPage = styled.main`
       margin: 10px;
       display: flex;
       flex-direction: column;
-      justify-content: start;
+      align-content: flex-start;
     }
 
     .roster {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
       align-items: center;
       border-left: 1px solid black;
       margin: 10px;
@@ -23,10 +28,12 @@ const StyledPage = styled.main`
       text-decoration: none;
     }
 
-    p {
-      display: flex;
-      flex-wrap: wrap;
-      text-decoration: none;
+    .roster p {
+      &:hover {
+      text-decoration: none;  
+      background-color: rgb(108,117,124);
+      color: #fff;
+      }
     }
 
    
@@ -71,6 +78,13 @@ function TeamPage(props) {
               <p>{props.team.conference.name} Conference</p>
               <p>Division: {props.team.division.name}</p>
               <a href={props.team.officialSiteUrl} target="_blank" rel="noreferrer">Official Team Site</a>
+              <br/>
+              <Link to="/">
+                <Button variant="secondary" type="submit">
+                  Go Back to All Teams
+                </Button>
+
+              </Link>
             </div>
             <div className="roster">
               <h2>Roster:</h2>
