@@ -36,7 +36,7 @@ function PlayerPage(props) {
       useEffect(() => {
         getAppData();
         console.log('effect');
-      }, []);
+      });
     
       console.log('player page', props);
       if (playerData) {

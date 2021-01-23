@@ -74,7 +74,7 @@ function TeamPage(props) {
       useEffect(() => {
         getAppData();
         console.log('effect');
-      }, []);
+      });
 
       console.log(props);
     
