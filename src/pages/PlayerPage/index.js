@@ -32,11 +32,11 @@ function PlayerPage(props) {
         setPlayersData(data.people[0]);
       }
     
+      getAppData();
     
       useEffect(() => {
-        getAppData();
         console.log('effect');
-      });
+      }, []);
     
       console.log('player page', props);
       if (playerData) {

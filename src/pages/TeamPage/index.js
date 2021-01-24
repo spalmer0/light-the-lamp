@@ -70,11 +70,11 @@ function TeamPage(props) {
         console.log(data);
       }
     
+      getAppData();
     
       useEffect(() => {
-        getAppData();
         console.log('effect');
-      });
+      }, []);
 
       console.log(props);
     
