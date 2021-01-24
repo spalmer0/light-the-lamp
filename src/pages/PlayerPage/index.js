@@ -26,17 +26,16 @@ function PlayerPage(props) {
     const [playerData, setPlayersData] = useState();
 
 
+    
+    
+    useEffect(() => {
       async function getAppData() {
         const data = await getPlayer(props.playerId);
-        console.log('Player Page', data);
         setPlayersData(data.people[0]);
       }
-    
       getAppData();
-    
-      useEffect(() => {
-        console.log('effect');
-      }, []);
+      console.log('effect');
+      }, [props.playerId]);
     
       console.log('player page', props);
       if (playerData) {

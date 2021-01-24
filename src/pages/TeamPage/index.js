@@ -64,19 +64,18 @@ function TeamPage(props) {
       })
 
 
-      async function getAppData() {
-        const data = await getRoster(props.team.id);
-        setRosterData(data);
-        console.log(data);
-      }
-    
-      getAppData();
-    
+      
+      
       useEffect(() => {
+        async function getAppData() {
+          const data = await getRoster(props.team.id);
+          setRosterData(data);
+          console.log(data);
+        }
+        getAppData();
         console.log('effect');
-      }, []);
-
-      console.log(props);
+      }, [props.team.id]);
+      
     
     return (
         <StyledPage>
