@@ -37,7 +37,6 @@ function PlayerPage(props) {
       console.log('effect');
       }, [props.playerId]);
     
-      console.log('player page', props);
       if (playerData) {
       return (
         <StyledPage>
