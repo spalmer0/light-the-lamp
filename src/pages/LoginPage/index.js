@@ -57,26 +57,6 @@ function LoginPage(props) {
                 Submit
             </Button>
         </Form>
-        
-        // <div className="Page">
-        //     <form onSubmit={handleSubmit}>
-        //         <h1>Sign In</h1>
-        //         <input 
-        //         value={formState.email} 
-        //         onChange={handleChange} 
-        //         name="email" 
-        //         type="email" 
-        //         />
-            
-        //         <input 
-        //         value={formState.password} 
-        //         onChange={handleChange} 
-        //         name="password" 
-        //         type="password" 
-        //         />
-        //         <button>Login</button>
-        //     </form>
-        // </div>
     );
     
 }

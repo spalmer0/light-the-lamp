@@ -38,7 +38,7 @@ function SignupPage(props) {
     }
     return (
         <Form onSubmit={handleSubmit}>
-            <Form.Group controlId="formBasicEmail">
+            <Form.Group>
                 <Form.Label>First Name</Form.Label>
                 <Form.Control 
                     value={formState.firstName}
@@ -49,7 +49,7 @@ function SignupPage(props) {
                 />
             </Form.Group>
 
-            <Form.Group controlId="formBasicEmail">
+            <Form.Group>
                 <Form.Label>Last Name</Form.Label>
                 <Form.Control 
                     value={formState.lastName}
@@ -87,39 +87,7 @@ function SignupPage(props) {
             </Button>
         </Form>
         
-        // <div className="Page">
-        //     <form onSubmit={handleSubmit}>
-        //         <label>First Name</label>
-        //         <input 
-        //         value={formState.firstName} 
-        //         onChange={handleChange} 
-        //         name="firstName" 
-        //         type="text" 
-        //         />
-        //         <label>Last Name</label>
-        //         <input 
-        //         value={formState.lastName} 
-        //         onChange={handleChange} 
-        //         name="lastName" 
-        //         type="text" 
-        //         />
-        //         <label>Email</label>
-        //         <input 
-        //         value={formState.email} 
-        //         onChange={handleChange} 
-        //         name="email" 
-        //         type="email" 
-        //         />
-        //         <label>Password</label>
-        //         <input 
-        //         value={formState.password} 
-        //         onChange={handleChange} 
-        //         name="password" 
-        //         type="password" 
-        //         />
-        //         <button>Sign Up</button>
-        //     </form>
-        // </div>
+        
     );
 }
 export default SignupPage;
